@@ -1,11 +1,11 @@
-from pynput import keyboard  
+import pynput
 from pynput.keyboard import Listener
 
-def keyPress(key):
-    pass
+def on_press(key):
+    print("Key pressed: {0}".format(key))
 
-def keyReleased(key):
-    pass
+def on_release(key):
+    print("Key released: {0}".format(key))
     
-with Listener(keyPress = keyPress, keyReleased = keyReleased) as listener:
+with Listener(on_press=on_press, on_release=on_release) as listener:
     listener.join()
