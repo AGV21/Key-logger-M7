@@ -1,14 +1,11 @@
-from pynput.keyboard import Key
-from pynput.keyboard import Listener 
- 
-keys = []
+from pynput import keyboard  
+from pynput.keyboard import Listener
 
-def functionPressed(key):
-    keys.pressed(key)
-    key.file(keys)
+def keyPress(key):
+    pass
+
+def keyReleased(key):
+    pass
     
-def keySaved(keys):
-    with open('keylog.txt') as log:
-        for key in keys:
-            
-
+with Listener(keyPress = keyPress, keyReleased = keyReleased) as listener:
+    listener.join()
